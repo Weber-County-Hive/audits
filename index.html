@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Weber County Hive — Audits</title>
+<style>
+  :root{
+    --navy:#16233d;
+    --navy-deep:#0e182c;
+    --manila:#e9dfc4;
+    --manila-dark:#d9caa2;
+    --paper:#faf5e8;
+    --ink:#221f1a;
+    --ink-soft:#4a4438;
+    --stamp:#8c2f22;
+    --stamp-soft:#b4543f;
+    --good:#3c5e3f;
+    --good-bg:#e7efe1;
+    --draft-bg:#f3e4c4;
+    --draft-ink:#7a5a1e;
+    --unconfirmed-bg:#f0dcdc;
+    --unconfirmed-ink:#8c2f22;
+    --gold:#a9832f;
+    --rule:#c9b98d;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--manila);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,"Iowan Old Style",serif;
+    line-height:1.55;
+  }
+  a{color:var(--stamp);}
+
+  .topband{
+    background:var(--navy-deep);
+    color:var(--manila);
+    padding:10px 24px;
+    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    font-size:0.72rem;
+    letter-spacing:.06em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .topband a{color:var(--manila-dark);text-decoration:none;border-bottom:1px solid rgba(233,223,196,.35);}
+  .topband a:hover{border-bottom-color:var(--manila);}
+
+  header.masthead{
+    background:var(--navy);
+    color:var(--paper);
+    padding:56px 24px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.masthead::after{
+    content:"";
+    position:absolute;
+    right:-60px;top:-60px;
+    width:260px;height:260px;
+    border:1px solid rgba(233,223,196,.12);
+    border-radius:50%;
+  }
+  .wrap{max-width:960px;margin:0 auto;position:relative;}
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  h1.title{
+    font-size:2.6rem;
+    line-height:1.1;
+    margin:0 0 10px;
+    font-weight:600;
+  }
+  .sub{
+    font-size:1.1rem;
+    color:var(--manila-dark);
+    font-style:italic;
+    margin:0 0 28px;
+    max-width:60ch;
+  }
+
+  .stat-row{
+    display:flex;
+    gap:32px;
+    flex-wrap:wrap;
+    margin-top:24px;
+  }
+  .stat{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  .stat .num{
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--paper);
+    display:block;
+  }
+  .stat .label{
+    font-size:.72rem;
+    letter-spacing:.05em;
+    color:var(--manila-dark);
+  }
+
+  main{max-width:960px;margin:0 auto;padding:40px 24px 100px;}
+
+  .controls{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:20px 22px;
+    margin-bottom:32px;
+  }
+  .search-row{display:flex;gap:10px;margin-bottom:14px;}
+  #searchBox{
+    flex:1;
+    font-family:"Newsreader",Georgia,serif;
+    font-size:1rem;
+    padding:10px 14px;
+    border:1px solid var(--rule);
+    background:#fff;
+    color:var(--ink);
+  }
+  #searchBox:focus{outline:2px solid var(--gold);outline-offset:1px;}
+  .result-count{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    color:var(--ink-soft);
+    align-self:center;
+    white-space:nowrap;
+  }
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag-chip{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.74rem;
+    letter-spacing:.02em;
+    padding:6px 12px;
+    border:1px solid var(--rule);
+    background:#fff;
+    color:var(--ink-soft);
+    cursor:pointer;
+    border-radius:2px;
+    user-select:none;
+  }
+  .tag-chip:hover{border-color:var(--gold);}
+  .tag-chip.active{
+    background:var(--navy);
+    border-color:var(--navy);
+    color:var(--paper);
+  }
+
+  .audit-card{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    margin-bottom:18px;
+    display:block;
+    text-decoration:none;
+    color:var(--ink);
+    transition:border-color .15s;
+  }
+  .audit-card:hover{border-color:var(--stamp);}
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    padding:20px 22px 10px;
+    flex-wrap:wrap;
+  }
+  .card-report-no{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.04em;
+    color:var(--ink-soft);
+  }
+  .badge-row{display:flex;gap:8px;align-items:center;}
+  .badge{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.68rem;
+    letter-spacing:.05em;
+    padding:3px 9px;
+    border-radius:2px;
+    font-weight:700;
+  }
+  .badge-confirmed{background:var(--good-bg);color:var(--good);}
+  .badge-draft{background:var(--draft-bg);color:var(--draft-ink);}
+  .badge-unconfirmed{background:var(--unconfirmed-bg);color:var(--unconfirmed-ink);}
+  .grade-badge{
+    width:28px;height:28px;
+    border:2px solid var(--gold);
+    border-radius:50%;
+    color:var(--gold);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:700;
+    font-size:.85rem;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .card-title{
+    font-size:1.35rem;
+    font-weight:600;
+    margin:6px 22px 4px;
+    line-height:1.28;
+  }
+  .card-subtitle{
+    font-style:italic;
+    color:var(--ink-soft);
+    margin:0 22px 12px;
+    font-size:.95rem;
+  }
+  .card-agency{
+    margin:0 22px 12px;
+    font-size:.9rem;
+    color:var(--ink-soft);
+  }
+  .card-summary{
+    margin:0 22px 14px;
+    font-size:.95rem;
+    max-width:70ch;
+  }
+  .key-figure{
+    margin:0 22px 14px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.82rem;
+    color:var(--stamp);
+    border-left:3px solid var(--stamp);
+    padding-left:10px;
+  }
+  .card-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    background:var(--navy-deep);
+    padding:12px 22px;
+  }
+  .card-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .card-tags span{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.68rem;
+    color:var(--manila-dark);
+    letter-spacing:.02em;
+  }
+  .card-dates{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.7rem;
+    color:var(--manila-dark);
+    white-space:nowrap;
+  }
+  .card-dates b{color:var(--gold);}
+
+  .empty-state{
+    text-align:center;
+    padding:60px 20px;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+
+  footer{
+    background:var(--navy-deep);
+    color:var(--manila-dark);
+    padding:32px 24px;
+    text-align:center;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.04em;
+  }
+  footer a{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <span>THE WEBER COUNTY HIVE — AUDITS</span>
+  <a href="https://webercountyhive.substack.com">webercountyhive.substack.com</a>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">STATE &amp; LOCAL AUDIT TRACKER</p>
+    <h1 class="title">Who's Checking the Books</h1>
+    <p class="sub">Every state and county audit we've read primary-source, tracked by report number, what it found, and whether anyone acted on it.</p>
+    <div class="stat-row">
+      <div class="stat"><span class="num" id="statCount">—</span><span class="label">AUDITS TRACKED</span></div>
+      <div class="stat"><span class="num" id="statAgencies">—</span><span class="label">ISSUING OFFICES</span></div>
+      <div class="stat"><span class="num" id="statLast">—</span><span class="label">LAST UPDATED</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="controls">
+    <div class="search-row">
+      <input type="text" id="searchBox" placeholder="Search by report number, agency, title, or keyword…">
+      <span class="result-count" id="resultCount"></span>
+    </div>
+    <div class="tag-row" id="tagRow"></div>
+  </div>
+
+  <div id="cardContainer"></div>
+  <div class="empty-state" id="emptyState" style="display:none;">No audits match that search or tag combination.</div>
+</main>
+
+<footer>
+  THE WEBER COUNTY HIVE · INDEPENDENT · ACCOUNTABILITY · JOURNALISM<br>
+  <a href="https://webercountyhive.substack.com">webercountyhive.substack.com</a>
+</footer>
+
+<script src="audits-data.js"></script>
+<script>
+  const container = document.getElementById('cardContainer');
+  const tagRow = document.getElementById('tagRow');
+  const searchBox = document.getElementById('searchBox');
+  const resultCount = document.getElementById('resultCount');
+  const emptyState = document.getElementById('emptyState');
+
+  let activeTags = new Set();
+
+  const allTags = [...new Set(AUDITS.flatMap(a => a.tags))].sort();
+  allTags.forEach(tag => {
+    const chip = document.createElement('span');
+    chip.className = 'tag-chip';
+    chip.textContent = tag;
+    chip.onclick = () => {
+      if (activeTags.has(tag)) { activeTags.delete(tag); chip.classList.remove('active'); }
+      else { activeTags.add(tag); chip.classList.add('active'); }
+      render();
+    };
+    tagRow.appendChild(chip);
+  });
+
+  function badgeClass(status){
+    if (status === 'draft') return 'badge-draft';
+    if (status === 'unconfirmed') return 'badge-unconfirmed';
+    return 'badge-confirmed';
+  }
+  function badgeLabel(status){
+    if (status === 'draft') return 'DRAFT';
+    if (status === 'unconfirmed') return 'UNCONFIRMED';
+    return 'CONFIRMED';
+  }
+
+  function render(){
+    const q = searchBox.value.trim().toLowerCase();
+    const filtered = AUDITS.filter(a => {
+      const matchesTags = activeTags.size === 0 || a.tags.some(t => activeTags.has(t));
+      const haystack = [a.reportNumber, a.agency, a.title, a.subtitle, a.summary, ...(a.tags||[])].join(' ').toLowerCase();
+      const matchesQuery = q === '' || haystack.includes(q);
+      return matchesTags && matchesQuery;
+    });
+
+    container.innerHTML = '';
+    filtered.forEach(a => {
+      const card = document.createElement('a');
+      card.href = a.link;
+      card.className = 'audit-card';
+      card.innerHTML = `
+        <div class="card-top">
+          <span class="card-report-no">${a.reportNumber}</span>
+          <div class="badge-row">
+            ${a.grade ? `<span class="grade-badge">${a.grade}</span>` : ''}
+            <span class="badge ${badgeClass(a.status)}">${badgeLabel(a.status)}</span>
+          </div>
+        </div>
+        <div class="card-title">${a.title}</div>
+        ${a.subtitle ? `<div class="card-subtitle">${a.subtitle}</div>` : ''}
+        <div class="card-agency">${a.agency}</div>
+        <div class="card-summary">${a.summary}</div>
+        ${a.keyFigure ? `<div class="key-figure">${a.keyFigure}</div>` : ''}
+        <div class="card-bottom">
+          <div class="card-tags">${a.tags.map(t => `<span>#${t.replace(/\s+/g,'')}</span>`).join(' ')}</div>
+          <div class="card-dates">Reported <b>${a.reportedDate}</b> · Updated <b>${a.lastUpdated}</b></div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    resultCount.textContent = `${filtered.length} of ${AUDITS.length}`;
+    emptyState.style.display = filtered.length === 0 ? 'block' : 'none';
+  }
+
+  function initStats(){
+    document.getElementById('statCount').textContent = AUDITS.length;
+    document.getElementById('statAgencies').textContent = new Set(AUDITS.map(a => a.agency)).size;
+    const dates = AUDITS.map(a => new Date(a.lastUpdated)).filter(d => !isNaN(d));
+    const mostRecent = dates.length ? new Date(Math.max(...dates)) : null;
+    document.getElementById('statLast').textContent = mostRecent
+      ? mostRecent.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'})
+      : '—';
+  }
+
+  searchBox.addEventListener('input', render);
+  initStats();
+  render();
+</script>
+
+</body>
+</html>

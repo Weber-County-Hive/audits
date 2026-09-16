@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OLAG 2026-18 — Governor's Office of Economic Development Audit | The Weber County Hive</title>
+<style>
+  :root{
+    --navy:#16233d;
+    --navy-deep:#0e182c;
+    --manila:#e9dfc4;
+    --manila-dark:#d9caa2;
+    --paper:#faf5e8;
+    --ink:#221f1a;
+    --ink-soft:#4a4438;
+    --stamp:#8c2f22;
+    --stamp-soft:#b4543f;
+    --good:#3c5e3f;
+    --good-bg:#e7efe1;
+    --gold:#a9832f;
+    --rule:#c9b98d;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--manila);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,"Iowan Old Style",serif;
+    line-height:1.55;
+  }
+  a{color:var(--stamp);}
+
+  .topband{
+    background:var(--navy-deep);
+    color:var(--manila);
+    padding:10px 24px;
+    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    font-size:0.72rem;
+    letter-spacing:.06em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .topband a{color:var(--manila-dark);text-decoration:none;border-bottom:1px solid rgba(233,223,196,.35);}
+  .topband a:hover{border-bottom-color:var(--manila);}
+
+  header.case-header{
+    background:var(--navy);
+    color:var(--paper);
+    padding:56px 24px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.case-header::after{
+    content:"";
+    position:absolute;
+    right:-60px;top:-60px;
+    width:260px;height:260px;
+    border:1px solid rgba(233,223,196,.12);
+    border-radius:50%;
+  }
+  .case-wrap{max-width:880px;margin:0 auto;position:relative;}
+  .case-eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  .case-title{
+    font-size:2.5rem;
+    line-height:1.14;
+    margin:0 0 10px;
+    font-weight:600;
+    max-width:20ch;
+  }
+  .case-sub{
+    font-size:1.15rem;
+    color:var(--manila-dark);
+    font-style:italic;
+    margin:0 0 28px;
+    max-width:56ch;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+  }
+  .meta-pill{
+    border:1px solid rgba(233,223,196,.3);
+    padding:6px 12px;
+    border-radius:2px;
+    color:var(--manila-dark);
+  }
+
+  main{max-width:880px;margin:0 auto;padding:48px 24px 100px;}
+  section{margin-bottom:56px;}
+  h2.section-head{
+    font-size:1.5rem;
+    margin:0 0 18px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:10px;
+  }
+  p{margin:0 0 16px;max-width:68ch;}
+  .lede{font-size:1.15rem;color:var(--ink-soft);}
+
+  .stamp-block{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:22px 26px;
+    margin:0 0 36px;
+  }
+  .stamp{
+    flex:0 0 auto;
+    width:88px;height:88px;
+    border:4px solid var(--stamp);
+    border-radius:50%;
+    color:var(--stamp);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:700;
+    font-size:2.4rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(-8deg);
+  }
+  .stamp-text .stamp-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;
+    letter-spacing:.08em;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+    display:block;
+  }
+  .stamp-text p{margin:0;font-size:.98rem;max-width:52ch;}
+
+  .figure-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+    margin-bottom:8px;
+  }
+  .figure-cell{
+    background:var(--navy);
+    color:var(--paper);
+    padding:22px 18px;
+    text-align:center;
+  }
+  .figure-cell .num{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:1.7rem;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+    margin-bottom:6px;
+  }
+  .figure-cell .cap{
+    font-size:.82rem;
+    color:var(--manila-dark);
+  }
+  @media (max-width:640px){.figure-grid{grid-template-columns:1fr;}}
+
+  .change-grid{
+    display:grid;
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .change-row{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    background:var(--paper);
+  }
+  .change-row .change-label{
+    padding:18px 20px;
+    background:var(--navy);
+    color:var(--manila);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.03em;
+    display:flex;
+    align-items:center;
+  }
+  .change-row .change-body{padding:18px 22px;}
+  .change-row .change-body p{margin:0 0 8px;font-size:.96rem;}
+  .change-row .change-body p:last-child{margin-bottom:0;}
+  @media (max-width:640px){
+    .change-row{grid-template-columns:1fr;}
+    .change-row .change-label{padding:10px 16px;}
+  }
+
+  table.rubric{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--paper);
+    font-size:.95rem;
+  }
+  table.rubric caption{
+    text-align:left;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.74rem;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+    caption-side:top;
+  }
+  table.rubric th,table.rubric td{
+    border:1px solid var(--rule);
+    padding:12px 14px;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.rubric th{
+    background:var(--navy);
+    color:var(--manila);
+    font-weight:600;
+    width:15%;
+  }
+  table.rubric td.grade{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:700;
+    text-align:center;
+    width:8%;
+    font-size:1.1rem;
+  }
+  tr.overall th, tr.overall td{
+    background:#efe6cf;
+    font-weight:700;
+  }
+
+  .pattern{
+    background:var(--navy);
+    color:var(--paper);
+    padding:24px 26px;
+  }
+  .pattern .pattern-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.74rem;
+    letter-spacing:.06em;
+    color:var(--gold);
+    display:block;
+    margin-bottom:10px;
+  }
+  .pattern p{color:var(--manila-dark);margin-bottom:0;}
+  .pattern strong{color:var(--paper);}
+
+  details{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:16px 20px;
+    margin-top:8px;
+  }
+  details summary{
+    cursor:pointer;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.8rem;
+    letter-spacing:.04em;
+    color:var(--stamp);
+  }
+  details[open] summary{margin-bottom:12px;}
+  details p:last-child{margin-bottom:0;}
+
+  .qa dt{font-weight:600;margin-top:18px;}
+  .qa dt:first-child{margin-top:0;}
+  .qa dd{margin:6px 0 0;color:var(--ink-soft);}
+
+  .sources-block{
+    background:transparent;
+    border:none;
+    border-top:2px solid var(--ink);
+    padding:0;
+    margin-top:8px;
+  }
+  .sources-block summary{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.85rem;
+    letter-spacing:.04em;
+    color:var(--ink);
+    padding:14px 0;
+  }
+  .sources-block ol{
+    margin:0 0 16px;
+    padding-left:20px;
+    font-size:.92rem;
+    color:var(--ink-soft);
+  }
+  .sources-block li{margin-bottom:10px;}
+
+  .related-row{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .related-card{
+    flex:1;
+    min-width:220px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .related-card:hover{border-color:var(--stamp);}
+  .related-card .rc-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.7rem;
+    letter-spacing:.05em;
+    color:var(--stamp);
+    display:block;
+    margin-bottom:6px;
+  }
+  .related-card .rc-title{font-weight:600;font-size:.98rem;}
+
+  footer{
+    background:var(--navy-deep);
+    color:var(--manila-dark);
+    padding:32px 24px;
+    text-align:center;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.04em;
+  }
+  footer a{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <span>THE WEBER COUNTY HIVE — AUDITS</span>
+  <a href="index.html">← Full audits docket</a>
+</div>
+
+<header class="case-header">
+  <div class="case-wrap">
+    <p class="case-eyebrow">OLAG REPORT 2026-18 · SEPTEMBER 15, 2026</p>
+    <h1 class="case-title">$249 Million, and No Way to Show Where It Went</h1>
+    <p class="case-sub">A legislative audit found Utah's economic development office couldn't document how it spent hundreds of millions in grant money — and credits new leadership with starting to fix it.</p>
+    <div class="meta-row">
+      <span class="meta-pill">Issued by: Office of the Legislative Auditor General</span>
+      <span class="meta-pill">Audited entity: Governor's Office of Economic Development</span>
+      <span class="meta-pill">Chief officer: Commissioner Jefferson Moss</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="stamp-block">
+    <div class="stamp">D</div>
+    <div class="stamp-text">
+      <span class="stamp-label">HOW THIS PIECE GRADES GOED'S OVERSIGHT</span>
+      <p>Weak, undocumented oversight of two major funding channels over a three-year window — with real, credited progress underway since May 2025 that hasn't yet closed the gap.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-head">What the audit found</h2>
+    <p class="lede">The Governor's Office of Economic Development is Utah's lead economic development agency, responsible for the state's unified economic development strategy and more than 40 grant, loan, and tax-incentive programs. The Legislature asked the Office of the Legislative Auditor General to review the office's operational efficiency — and specifically, the millions of dollars in pass-through funding it administers.</p>
+    <p>Auditors reviewed award activity from fiscal years 2023 through 2025 and found that GOED "cannot consistently demonstrate how awardees used" nearly $249 million in funds, or whether that money achieved its intended results. The audit traces the gap to two funding channels with weaker oversight than the rest of GOED's portfolio: pass-through grants, awarded without a competitive process, and the Industrial Assistance Account (IAA), an application-only program for companies offering the state an "economic opportunity."</p>
+    <div class="figure-grid">
+      <div class="figure-cell"><span class="num">$249M</span><span class="cap">total funds GOED couldn't consistently document, FY2023–25</span></div>
+      <div class="figure-cell"><span class="num">$164M</span><span class="cap">in pass-through grants over that period</span></div>
+      <div class="figure-cell"><span class="num">$85M</span><span class="cap">administered through the Industrial Assistance Account</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-head">Past leadership, current leadership</h2>
+    <div class="change-grid">
+      <div class="change-row">
+        <div class="change-label">WHO WAS IN CHARGE</div>
+        <div class="change-body">
+          <p>Ryan Starks served as the office's executive director from January 2023 to May 2025 — nearly the entire period the audit reviewed. The audit's findings on "past GOED leadership" cover that tenure without naming him directly. Starks left in May 2025 to lead the Economic Development Corporation of Utah.</p>
+        </div>
+      </div>
+      <div class="change-row">
+        <div class="change-label">WHAT CHANGED IN MAY 2025</div>
+        <div class="change-body">
+          <p>Jefferson Moss took over as executive director (now Commissioner) in May 2025. The audit credits his tenure with hiring a chief compliance officer, beginning efforts to recover misspent and unspent funds, and revising GOED's grant selection processes.</p>
+          <p>New leadership also terminated a $3.2 million, 10-year Industrial Assistance Account contract with the Salt Lake Chamber Foundation — the same grant Utah Political Watch has reported Starks personally approved three days before announcing his departure, and on whose steering committee he sat. The audit's account of that termination, "due to contract timing concerns," independently confirms that earlier reporting from a second, separate government source.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-head">A grant that closed within 20 months</h2>
+    <p>In January 2024, the GOED board approved a $2 million, non-matching Industrial Assistance Account grant to the Utah Beef Producers, intended to support a meat processing facility. GOED disbursed the full amount upfront. The business began operations without a full permit, engaged in improper dumping, and closed less than 20 months after receiving the grant.</p>
+    <p>According to the audit, GOED's own case file for the grant contained a single project report — an expenditure list submitted after the facility had already closed. The office learned of the closure through outside sources, not its own monitoring process. The state has since recovered roughly 11% of the original award, leaving close to $1.8 million unrecovered, though it retains an ownership interest in some of the infrastructure the grant funded.</p>
+    <details>
+      <summary>How the audit connects this case to a wider pattern</summary>
+      <p>The audit doesn't treat Utah Beef Producers as an isolated failure. It's presented as an example of what happens when the two structural gaps identified elsewhere in the report — no documented budget before funds go out, and no enforced final report before a grant closes — play out on an individual award. The same two failures show up separately in the audit's review of GOED's broader FY2025 pass-through activity, described below.</p>
+    </details>
+  </section>
+
+  <section>
+    <h2 class="section-head">Reporting compliance collapsed, not improved</h2>
+    <p>Auditors tracked how many Industrial Assistance Account grantees had documented annual or final reports on file, year by year:</p>
+    <div class="figure-grid">
+      <div class="figure-cell"><span class="num">30%</span><span class="cap">FY 2023 — 6 of 20 grantees documented</span></div>
+      <div class="figure-cell"><span class="num">33%</span><span class="cap">FY 2024 — 7 of 21 grantees documented</span></div>
+      <div class="figure-cell"><span class="num">0%</span><span class="cap">FY 2025 — 0 of 7 grantees documented</span></div>
+    </div>
+    <p>Separately, in its review of GOED's 21 fiscal-year-2025 pass-through grants (totaling $39 million), the audit found GOED disbursed $3.8 million — 19% of that year's awardees — with no documented initial budget on file, and made final payments to two entities with no final report at all. Of 19 nonprofit grantees required to file financial reports with the State Auditor, only 5 were current; 14 were missing or out of date.</p>
+  </section>
+
+  <section>
+    <div class="pattern">
+      <span class="pattern-label">WHAT THE AUDIT RECOMMENDS</span>
+      <p>Three of the report's six recommendations go directly to leadership: document grant budgets before disbursing initial funds, ensure final reports meet statutory requirements before final funds go out, and require grantees to actually file the financial reports the state auditor is owed. A fourth asks GOED to build a structured review framework for IAA reporting specifically. GOED, under Commissioner Moss, formally accepted all six recommendations, with implementation timelines running through August 2027.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-head">The rest of GOED's portfolio</h2>
+    <p>The audit's findings are specific to pass-through and IAA funding — not GOED's full 42-program portfolio. In the same report, auditors partnered with Utah State University's Analytics Solutions Center to evaluate a separate GOED program, the Economic Development Tax Increment Financing (EDTIF) tax credit, which pays companies only after they've delivered on job and investment commitments. That analysis found EDTIF generated an audit-validated $3.20 in new state tax revenue for every $1 disbursed, with broader estimated returns — including supply-chain and spending effects — ranging from $5.39 to $7.29 per dollar, across the 70 companies studied.</p>
+  </section>
+
+  <section>
+    <h2 class="section-head">Graded by the collective rubric</h2>
+    <table class="rubric">
+      <caption>Power · Transparency · Financial Accountability · Environmental Impact · Community Impact</caption>
+      <tr><th>Power</th><td class="grade">C</td><td>The Industrial Assistance Account's structure gives the executive director wide discretion over awards, with the board's role advisory rather than binding — a design the audit doesn't fault directly, but one that concentrated the failures it found in a single office under a single director's oversight.</td></tr>
+      <tr><th>Transparency</th><td class="grade">D</td><td>Three consecutive years of incomplete reporting, ending at zero percent for FY2025, and annual reports that — per the audit — listed totals without naming recipients or outcomes as statute requires.</td></tr>
+      <tr><th>Financial accountability</th><td class="grade">D</td><td>Nearly $249 million moved with inconsistent documentation; a $2 million grant to a single recipient went undermonitored through a full business failure before the state noticed independently.</td></tr>
+      <tr><th>Environmental impact</th><td class="grade">N/A</td><td>Not addressed by this audit.</td></tr>
+      <tr><th>Community impact</th><td class="grade">C</td><td>No public funds were shown to be misused in the specific accounts this audit reviewed — the harm here is the state's own reduced ability to know whether its economic development spending is working, not a documented instance of money going to the wrong place.</td></tr>
+      <tr class="overall"><th>Overall</th><td class="grade">D</td><td>A real, multi-year oversight failure with credible, documented steps toward a fix already underway — graded on what happened, not on whether the fix will hold.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2 class="section-head">Common questions</h2>
+    <dl class="qa">
+      <dt>Does this audit say money was stolen or misused?</dt>
+      <dd>Not in the specific accounts it reviewed for this report. It found GOED could not document how funds were used or whether they worked — a records and monitoring failure, not a finding of theft. A separate, earlier State Auditor report did find a specific pass-through grant was misused (between $1.8 million and $2.8 million, tied to the Manufacturing Extension Partnership program); this audit cites that case as evidence the risks it's describing are real, not hypothetical.</dd>
+
+      <dt>Is this still happening?</dt>
+      <dd>The audit describes both a past failure and a present-tense response. It credits current leadership, in place since May 2025, with real corrective steps — but its own data shows FY2025 reporting compliance at zero percent, the same year those changes began. Whether the fix is working is a question for the next audit, not this one.</dd>
+
+      <dt>Who is responsible for the Industrial Assistance Account today?</dt>
+      <dd>GOED's executive director — currently Jefferson Moss, titled Commissioner in the office's formal audit response — administers the account under state law. Ryan Starks held that role for nearly the entire period this audit reviewed.</dd>
+
+      <dt>What has the Legislature done about this?</dt>
+      <dd>In the same 2026 session, lawmakers passed H.B. 545, which added new IAA reporting language and formalized the GOED board's advisory role over IAA grants — but with no funding attached, and a legislative fiscal note finding it doesn't constitute a new program. The same bill separately narrowed the State Auditor's control over her own office's operating expenses. Full breakdown linked below.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2 class="section-head">Related on this docket</h2>
+    <div class="related-row">
+      <a class="related-card" href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb545.html">
+        <span class="rc-label">BILL-TRACKER</span>
+        <span class="rc-title">H.B. 545 — the Legislature's unfunded response to this audit</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <details class="sources-block">
+      <summary>Sources</summary>
+      <ol>
+        <li>Office of the Legislative Auditor General, Report No. 2026-18, "A Systemic Performance Audit of the Governor's Office of Economic Development: A Review of Oversight and Outcomes," transmitted to the Utah Legislature September 15, 2026.</li>
+        <li>Office of the Utah State Auditor, Report No. USU25SP, "Manufacturing Extension Partnership" Limited Review, July 29, 2025.</li>
+        <li>GOED Agency Response Plan, signed by Commissioner Jeff Moss, August 21, 2026 — appended to OLAG Report 2026-18.</li>
+        <li>Utah Political Watch (Bryan Schott), reporting on the Ryan Starks / Utah Rising Industrial Assistance Account grant, published September 3, 2025, updated December 2, 2025.</li>
+        <li>H.B. 545, "Budgetary Modifications," 2026 General Session — for the legislative response, see the linked Bill-Tracker case file.</li>
+      </ol>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  THE WEBER COUNTY HIVE · INDEPENDENT · ACCOUNTABILITY · JOURNALISM<br>
+  <a href="https://webercountyhive.substack.com">webercountyhive.substack.com</a>
+</footer>
+
+</body>
+</html>
