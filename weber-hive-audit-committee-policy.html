@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weber County Audit Committee Policy — 2026 Revision | The Weber County Hive</title>
+<style>
+  :root{
+    --navy:#16233d;
+    --navy-deep:#0e182c;
+    --manila:#e9dfc4;
+    --manila-dark:#d9caa2;
+    --paper:#faf5e8;
+    --ink:#221f1a;
+    --ink-soft:#4a4438;
+    --stamp:#8c2f22;
+    --stamp-soft:#b4543f;
+    --good:#3c5e3f;
+    --good-bg:#e7efe1;
+    --gold:#a9832f;
+    --rule:#c9b98d;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--manila);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,"Iowan Old Style",serif;
+    line-height:1.55;
+  }
+  @font-face{font-family:"Newsreader";src:local("Georgia");}
+  a{color:var(--stamp);}
+
+  .topband{
+    background:var(--navy-deep);
+    color:var(--manila);
+    padding:10px 24px;
+    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    font-size:0.72rem;
+    letter-spacing:.06em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .topband a{color:var(--manila-dark);text-decoration:none;border-bottom:1px solid rgba(233,223,196,.35);}
+  .topband a:hover{border-bottom-color:var(--manila);}
+
+  header.case-header{
+    background:var(--navy);
+    color:var(--paper);
+    padding:56px 24px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.case-header::after{
+    content:"";
+    position:absolute;
+    right:-60px;top:-60px;
+    width:260px;height:260px;
+    border:1px solid rgba(233,223,196,.12);
+    border-radius:50%;
+  }
+  .case-wrap{max-width:880px;margin:0 auto;position:relative;}
+  .case-eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  .case-title{
+    font-size:2.5rem;
+    line-height:1.14;
+    margin:0 0 10px;
+    font-weight:600;
+    max-width:18ch;
+  }
+  .case-sub{
+    font-size:1.15rem;
+    color:var(--manila-dark);
+    font-style:italic;
+    margin:0 0 28px;
+    max-width:52ch;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+  }
+  .meta-pill{
+    border:1px solid rgba(233,223,196,.3);
+    padding:6px 12px;
+    border-radius:2px;
+    color:var(--manila-dark);
+  }
+
+  .pub-date{
+    margin-top:14px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.03em;
+    color:var(--gold);
+  }
+
+  main{max-width:880px;margin:0 auto;padding:48px 24px 100px;}
+  section{margin-bottom:56px;}
+  h2.section-head{
+    font-size:1.5rem;
+    margin:0 0 18px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:10px;
+  }
+  p{margin:0 0 16px;max-width:68ch;}
+  .lede{font-size:1.15rem;color:var(--ink-soft);}
+
+  .stamp-block{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:22px 26px;
+    margin:0 0 36px;
+  }
+  .stamp{
+    flex:0 0 auto;
+    width:88px;height:88px;
+    border:4px solid var(--gold);
+    border-radius:50%;
+    color:var(--gold);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:700;
+    font-size:1.05rem;
+    text-align:center;
+    line-height:1.1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(-8deg);
+  }
+  .stamp-text .stamp-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;
+    letter-spacing:.08em;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+    display:block;
+  }
+  .stamp-text p{margin:0;font-size:.98rem;max-width:52ch;}
+
+  .change-grid{
+    display:grid;
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .change-row{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    background:var(--paper);
+  }
+  .change-row .change-label{
+    padding:18px 20px;
+    background:var(--navy);
+    color:var(--manila);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.78rem;
+    letter-spacing:.03em;
+    display:flex;
+    align-items:center;
+  }
+  .change-row .change-body{padding:18px 22px;}
+  .change-row .change-body p{margin:0 0 8px;font-size:.96rem;}
+  .change-row .change-body p:last-child{margin-bottom:0;}
+  .change-row .quote{
+    font-style:italic;
+    color:var(--stamp-soft);
+    border-left:3px solid var(--stamp-soft);
+    padding-left:12px;
+    margin:8px 0;
+  }
+  @media (max-width:640px){
+    .change-row{grid-template-columns:1fr;}
+    .change-row .change-label{padding:10px 16px;}
+  }
+
+  .pattern{
+    background:var(--navy);
+    color:var(--paper);
+    padding:24px 26px;
+  }
+  .pattern .pattern-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.74rem;
+    letter-spacing:.06em;
+    color:var(--gold);
+    display:block;
+    margin-bottom:10px;
+  }
+  .pattern p{color:var(--manila-dark);margin-bottom:0;}
+  .pattern strong{color:var(--paper);}
+
+  details{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:16px 20px;
+    margin-top:8px;
+  }
+  details summary{
+    cursor:pointer;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.8rem;
+    letter-spacing:.04em;
+    color:var(--stamp);
+  }
+  details[open] summary{margin-bottom:12px;}
+  details p:last-child{margin-bottom:0;}
+
+  .open-question{
+    border-left:3px solid var(--gold);
+    padding-left:16px;
+    margin:18px 0;
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+
+  .qa dt{font-weight:600;margin-top:18px;}
+  .qa dt:first-child{margin-top:0;}
+  .qa dd{margin:6px 0 0;color:var(--ink-soft);}
+
+  .sources-block{
+    background:transparent;
+    border:none;
+    border-top:2px solid var(--ink);
+    padding:0;
+    margin-top:8px;
+  }
+  .sources-block summary{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.85rem;
+    letter-spacing:.04em;
+    color:var(--ink);
+    padding:14px 0;
+  }
+  .sources-block ol{
+    margin:0 0 16px;
+    padding-left:20px;
+    font-size:.92rem;
+    color:var(--ink-soft);
+  }
+  .sources-block li{margin-bottom:10px;}
+
+  footer{
+    background:var(--navy-deep);
+    color:var(--manila-dark);
+    padding:32px 24px;
+    text-align:center;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.04em;
+  }
+  footer a{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<div class="topband">
+  <span>THE WEBER COUNTY HIVE — LOCAL GOVERNANCE</span>
+  <a href="index.html">← Full case docket</a>
+</div>
+
+<header class="case-header">
+  <div class="case-wrap">
+    <p class="case-eyebrow">WEBER COUNTY COMMISSION · MAY 12, 2026 MEETING PACKET · DRAFT POLICY</p>
+    <h1 class="case-title">A Draft Rewrite of Weber County's Audit Committee Rules</h1>
+    <p class="case-sub">New subpoena power for auditors, a new recusal rule for commissioners with ties to the department under review, and tighter secrecy around draft audit findings.</p>
+    <div class="meta-row">
+      <span class="meta-pill">Document: G14, Audit Committee Policy 2026 Revision V2</span>
+      <span class="meta-pill">Status: Draft — for discussion purposes only</span>
+    </div>
+    <p class="pub-date">Published Sep 16, 2026 &middot; Updated Sep 16, 2026</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="stamp-block">
+    <div class="stamp">DRAFT<br>STATUS</div>
+    <div class="stamp-text">
+      <span class="stamp-label">WHAT THIS PAGE TRACKS</span>
+      <p>This document was presented to the Weber County Commission at its May 12, 2026 meeting, watermarked "DRAFT – FOR DISCUSSION PURPOSES ONLY." Whether it has since been formally adopted has not been confirmed here — this page describes what the draft proposes, not what is currently in force.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-head">What the policy governs</h2>
+    <p class="lede">Weber County's Audit Committee oversees the county's Internal Auditor — the office responsible for reviewing county departments' spending, controls, and compliance from the inside, separate from the outside firm that audits the county's annual financial statements. The policy that governs how that committee operates, who sits on it, what power it has, and what it can keep confidential was up for a substantial rewrite at the May 12, 2026 commission meeting.</p>
+    <p>The draft runs to five pages; the packet reviewed here contains the first four. The signature line reflects Commissioner Gage Froerer as chair, where the prior version of the policy was signed by then-Commissioner Jim Harvey.</p>
+  </section>
+
+  <section>
+    <h2 class="section-head">What would change</h2>
+    <div class="change-grid">
+      <div class="change-row">
+        <div class="change-label">New subpoena power</div>
+        <div class="change-body">
+          <p>The draft adds that the Committee "will assist in circumstances where the auditee is engaging in scope limiting behavior," including by "subpoenaing records and documents as determined necessary by the internal auditor." Current policy contains no such power — a department being audited can currently limit what the Internal Auditor sees without the Committee having a formal tool to compel it.</p>
+        </div>
+      </div>
+      <div class="change-row">
+        <div class="change-label">New recusal rule</div>
+        <div class="change-body">
+          <p>Committee members would be required to recuse and leave the room when a department they currently — or formerly — had governance over is being discussed, if the audit period overlaps their time overseeing it. This closes a gap the current policy doesn't address: nothing currently requires a committee member with a direct tie to an audited department to step back from that discussion.</p>
+        </div>
+      </div>
+      <div class="change-row">
+        <div class="change-label">Tighter confidentiality</div>
+        <div class="change-body">
+          <p>Draft and unapproved internal audit reports would be explicitly classified as "not public records" and stated that they "may not be distributed" — and that classification would newly extend to "special projects or advisory engagements," not just standard audits as under the current policy. This closes off public access to draft audit material before it's finalized, across a wider range of the Internal Auditor's work than before.</p>
+        </div>
+      </div>
+      <div class="change-row">
+        <div class="change-label">New removal cause</div>
+        <div class="change-body">
+          <p>"Improper disclosure of confidential information of the Committee" would be added as a stated ground for removing a committee member — paired directly with the confidentiality expansion above.</p>
+        </div>
+      </div>
+      <div class="change-row">
+        <div class="change-label">Internal Auditor supervision</div>
+        <div class="change-body">
+          <p>The Committee would take on hiring, directing, and supervising authority over the Internal Auditor (or a contracted firm, if the position is unfilled), with the Clerk/Auditor's office acting as liaison and conducting pay-for-performance evaluations. This is a restructuring of who directs the county's internal audit function day to day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="pattern">
+      <span class="pattern-label">READING THE TWO CHANGES TOGETHER</span>
+      <p>The subpoena power and the confidentiality expansion move in opposite directions on public access: one gives the Committee more power to pull records out of a resistant department, while the other makes it harder for the public to see draft findings before they're finalized. Read separately, either could be framed as a routine governance update. Read together, they describe a committee gaining real investigative teeth internally, while closing the door on what the public sees of that work until it's done.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-head">Common questions</h2>
+    <dl class="qa">
+      <dt>Has this policy actually passed?</dt>
+      <dd>Not confirmed as of this page's publication. The version reviewed here is explicitly marked as a draft for discussion. Subsequent commission meeting minutes would show whether and when it was formally adopted.</dd>
+
+      <dt>Does the new subpoena power apply to county departments generally, or only in specific cases?</dt>
+      <dd>The draft language ties it to a department "engaging in scope limiting behavior" during an audit — it isn't a standing power the Committee could use at will, but a response mechanism for when a department resists an audit's scope.</dd>
+
+      <dt>Would this change what the public can currently see about county audits?</dt>
+      <dd>It would formalize and broaden what's already treated as confidential. Draft and unapproved audit reports being non-public isn't new; what's new is extending that same treatment to "special projects or advisory engagements," which is a broader category of the Internal Auditor's work than standard audits alone.</dd>
+
+      <dt>Who signs off on this policy?</dt>
+      <dd>The draft's signature line names Commissioner Gage Froerer, the current commission chair. The prior version was signed by then-Commissioner Jim Harvey.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <details class="sources-block">
+      <summary>Sources</summary>
+      <ol>
+        <li>Weber County Commission, "G14 &nbsp; Audit Committee Policy 2026 Revision V2.pdf," May 12, 2026 commission meeting packet, pages 1–4 of 5 (page 5 not reviewed for this piece). webercountyutah.gov.</li>
+        <li>Prior version of the Weber County Audit Committee Policy, reviewed for redline comparison against the May 2026 draft.</li>
+      </ol>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  THE WEBER COUNTY HIVE · INDEPENDENT · ACCOUNTABILITY · JOURNALISM<br>
+  <a href="https://webercountyhive.substack.com">webercountyhive.substack.com</a>
+</footer>
+
+</body>
+</html>
