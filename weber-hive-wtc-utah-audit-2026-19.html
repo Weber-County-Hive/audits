@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OLAG 2026-19 — World Trade Center Utah Audit | Utah Hive Politics</title>
+<style>
+  :root{
+    --navy:#16233d;
+    --navy-deep:#0e182c;
+    --manila:#e9dfc4;
+    --manila-dark:#d9caa2;
+    --paper:#faf5e8;
+    --ink:#221f1a;
+    --ink-soft:#4a4438;
+    --stamp:#8c2f22;
+    --stamp-soft:#b4543f;
+    --good:#3c5e3f;
+    --good-bg:#e7efe1;
+    --gold:#a9832f;
+    --rule:#c9b98d;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--manila);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,"Iowan Old Style",serif;
+    line-height:1.55;
+  }
+  a{color:var(--stamp);}
+
+  .topband{
+    background:var(--navy-deep);
+    color:var(--manila);
+    padding:10px 24px;
+    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    font-size:0.72rem;
+    letter-spacing:.06em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .topband a{color:var(--manila-dark);text-decoration:none;border-bottom:1px solid rgba(233,223,196,.35);}
+  .topband a:hover{border-bottom-color:var(--manila);}
+
+  header.case-header{
+    background:var(--navy);
+    color:var(--paper);
+    padding:56px 24px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.case-header::after{
+    content:"";
+    position:absolute;
+    right:-60px;top:-60px;
+    width:260px;height:260px;
+    border:1px solid rgba(233,223,196,.12);
+    border-radius:50%;
+  }
+  .case-wrap{max-width:880px;margin:0 auto;position:relative;}
+  .case-eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  .case-title{
+    font-size:2.5rem;
+    line-height:1.14;
+    margin:0 0 10px;
+    font-weight:600;
+    max-width:20ch;
+  }
+  .case-sub{
+    font-size:1.15rem;
+    color:var(--manila-dark);
+    font-style:italic;
+    margin:0 0 28px;
+    max-width:56ch;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+  }
+  .meta-pill{
+    border:1px solid rgba(233,223,196,.3);
+    padding:6px 12px;
+    border-radius:2px;
+    color:var(--manila-dark);
+  }
+
+  .pub-date{
+    margin-top:14px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.03em;
+    color:var(--gold);
+  }
+
+  main{max-width:880px;margin:0 auto;padding:48px 24px 100px;}
+  section{margin-bottom:56px;}
+  h2.section-head{
+    font-size:1.5rem;
+    margin:0 0 18px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:10px;
+  }
+  p{margin:0 0 16px;max-width:68ch;}
+  .lede{font-size:1.15rem;color:var(--ink-soft);}
+
+  .stamp-block{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:22px 26px;
+    margin:0 0 36px;
+  }
+  .stamp{
+    flex:0 0 auto;
+    width:88px;height:88px;
+    border:4px solid var(--stamp);
+    border-radius:50%;
+    color:var(--stamp);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:700;
+    font-size:2.4rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(-8deg);
+  }
+  .stamp-text .stamp-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;
+    letter-spacing:.08em;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+    display:block;
+  }
+  .stamp-text p{margin:0;font-size:.98rem;max-width:52ch;}
+
+  .figure-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+    margin-bottom:8px;
+  }
+  .figure-cell{
+    background:var(--navy);
+    color:var(--paper);
+    padding:22px 18px;
+    text-align:center;
+  }
+  .figure-cell .num{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:1.7rem;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+    margin-bottom:6px;
+  }
+  .figure-cell .cap{
+    font-size:.82rem;
+    color:var(--manila-dark);
+  }
+  @media (max-width:640px){.figure-grid{grid-template-columns:1fr;}}
+
+  .change-grid{
+    display:grid;
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .change-row{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    background:var(--paper);
+  }
+  .change-row .change-label{
+    padding:18px 20px;
+    background:var(--navy);
+    color:var(--manila);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.03em;
+    display:flex;
+    align-items:center;
+  }
+  .change-row .change-body{padding:18px 22px;}
+  .change-row .change-body p{margin:0 0 8px;font-size:.96rem;}
+  .change-row .change-body p:last-child{margin-bottom:0;}
+  @media (max-width:640px){
+    .change-row{grid-template-columns:1fr;}
+    .change-row .change-label{padding:10px 16px;}
+  }
+
+  table.rubric{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--paper);
+    font-size:.95rem;
+  }
+  table.rubric caption{
+    text-align:left;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.74rem;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+    caption-side:top;
+  }
+  table.rubric th,table.rubric td{
+    border:1px solid var(--rule);
+    padding:12px 14px;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.rubric th{
+    background:var(--navy);
+    color:var(--manila);
+    font-weight:600;
+    width:15%;
+  }
+  table.rubric td.grade{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:700;
+    text-align:center;
+    width:8%;
+    font-size:1.1rem;
+  }
+  tr.overall th, tr.overall td{
+    background:#efe6cf;
+    font-weight:700;
+  }
+
+  .pattern{
+    background:var(--navy);
+    color:var(--paper);
+    padding:24px 26px;
+  }
+  .pattern .pattern-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.74rem;
+    letter-spacing:.06em;
+    color:var(--gold);
+    display:block;
+    margin-bottom:10px;
+  }
+  .pattern p{color:var(--manila-dark);margin-bottom:0;}
+  .pattern strong{color:var(--paper);}
+
+  details{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:16px 20px;
+    margin-top:8px;
+  }
+  details summary{
+    cursor:pointer;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.8rem;
+    letter-spacing:.04em;
+    color:var(--stamp);
+  }
+  details[open] summary{margin-bottom:12px;}
+  details p:last-child{margin-bottom:0;}
+
+  .qa dt{font-weight:600;margin-top:18px;}
+
+  .ask-list{list-style:none;margin:0;padding:0;}
+  .ask-list li{
+    background:var(--paper);
+    border-left:4px solid var(--gold);
+    padding:14px 18px;
+    margin-bottom:10px;
+    font-size:.95rem;
+  }
+  .ask-list li strong{color:var(--stamp);}
+  .qa dt:first-child{margin-top:0;}
+  .qa dd{margin:6px 0 0;color:var(--ink-soft);}
+
+  .sources-block{
+    background:transparent;
+    border:none;
+    border-top:2px solid var(--ink);
+    padding:0;
+    margin-top:8px;
+  }
+  .sources-block summary{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.85rem;
+    letter-spacing:.04em;
+    color:var(--ink);
+    padding:14px 0;
+  }
+  .sources-block ol{
+    margin:0 0 16px;
+    padding-left:20px;
+    font-size:.92rem;
+    color:var(--ink-soft);
+  }
+  .sources-block li{margin-bottom:10px;}
+
+  .related-row{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .related-card{
+    flex:1;
+    min-width:220px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .related-card:hover{border-color:var(--stamp);}
+  .related-card .rc-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.7rem;
+    letter-spacing:.05em;
+    color:var(--stamp);
+    display:block;
+    margin-bottom:6px;
+  }
+  .related-card .rc-title{font-weight:600;font-size:.98rem;}
+
+  footer{
+    background:var(--navy-deep);
+    color:var(--manila-dark);
+    padding:32px 24px;
+    text-align:center;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.04em;
+  }
+  footer a{color:var(--gold);}
+
+  .flow{display:flex;flex-direction:column;align-items:stretch;gap:0;max-width:640px;margin:0 auto}
+  .flow .fb{background:#fff;border:2px solid var(--navy);padding:14px 18px;font-size:1.08rem;line-height:1.35;text-align:center}
+  .flow .fb b{display:block;font-size:1.15rem}
+  .flow .fb small{display:block;font-family:Arial,sans-serif;font-size:.9rem;color:var(--ink-soft);margin-top:4px}
+  .flow .fb.red{border-color:var(--stamp);background:#fbeee9}
+  .flow .fb.dark{background:var(--navy);color:var(--paper)}
+  .flow .fb.dark small{color:var(--manila-dark)}
+  .flow .ar{text-align:center;font-family:Arial,sans-serif;font-size:.95rem;color:var(--ink-soft);padding:6px 0}
+  .flow .ar::before{content:"\25BC";display:block;color:var(--stamp);font-size:1.3rem;line-height:1}
+  .flow2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.flow2{grid-template-columns:1fr}}
+  .tl{list-style:none;margin:0;padding:0;border-left:4px solid var(--stamp)}
+  .tl li{position:relative;padding:0 0 18px 22px;font-size:1rem}
+  .tl li::before{content:"";position:absolute;left:-11px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:4px solid var(--stamp)}
+  .tl li b{display:block;font-family:Arial,sans-serif;font-size:.9rem;color:var(--stamp)}
+  .note{background:var(--paper);border:1px dashed var(--rule);padding:12px 16px;font-size:.93rem;color:var(--ink-soft);margin:0 0 16px}
+  table.money{width:100%;border-collapse:collapse;background:var(--paper);font-size:.98rem;margin-bottom:10px}
+  table.money th,table.money td{border:1px solid var(--rule);padding:10px 12px;text-align:left;vertical-align:top}
+  table.money th{background:var(--navy);color:var(--manila)}
+  table.money td.n{text-align:right;font-family:Arial,sans-serif;font-weight:bold;white-space:nowrap}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.hs-short{background:#faf5e8;border:1px solid #c9b98d;border-left:6px solid #8c2f22;padding:18px 22px;margin:0 0 30px}
+.hs-short h2{font-size:1.2rem;margin:0 0 10px;border:0;padding:0}
+.hs-short ul{margin:0;padding-left:20px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.82rem;padding:7px 12px;border:1px solid #c9b98d;background:#faf5e8;color:#221f1a;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#8c2f22}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#f3ead2;border:1px dashed #8c2f22;padding:14px 18px;margin:0 0 26px;font-size:1rem}
+.hs-btn{display:inline-block;background:#8c2f22;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:10px 16px;border-radius:6px}
+.hs-pages{background:#faf5e8;border:1px solid #c9b98d;padding:14px 18px;margin:0 0 30px}
+.hs-pages .hs-k{font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#4a4438;margin-bottom:8px}
+.hs-pages ol{margin:0;padding-left:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#221f1a;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#4a4438;font-weight:normal}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#faf5e8;border:1px solid #c9b98d;border-top:5px solid #8c2f22;padding:14px 16px;cursor:pointer;font:inherit;color:#221f1a;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.75rem;color:#4a4438;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#faf5e8;border-left:4px solid #8c2f22;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.85rem;color:#8c2f22;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#16233d;color:#faf5e8;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.8rem;font-weight:bold}
+.hs-counter .l{font-size:.8rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.85rem;color:#4a4438;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#faf5e8;border:1px solid #c9b98d;border-top:5px solid #8c2f22;padding:14px 16px;text-decoration:none;color:#221f1a}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.88rem;color:#4a4438}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,34%) 1fr;gap:10px 12px;align-items:center;font-family:Arial,sans-serif;font-size:.95rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:26px;background:#8c2f22;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.zero{background:none;border-left:3px solid #221f1a;border-radius:0}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#faf5e8;border:1px solid #c9b98d;padding:16px 18px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.05rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.82rem;color:#4a4438;margin:0 0 12px}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.85rem}}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
+<div class="topband">
+  <span>THE WEBER COUNTY HIVE — AUDITS</span>
+  <a href="index.html">← Full audits docket</a>
+</div>
+<header class="case-header">
+  <div class="case-wrap">
+    <p class="case-eyebrow">OLAG REPORT 2026-19 · SEPTEMBER 15, 2026</p>
+    <h1 class="case-title">The Work Got Done. The Paperwork Didn't Keep Up.</h1>
+    <p class="case-sub">A legislative audit of World Trade Center Utah found the state-funded nonprofit met its contracts, but its main success number is self-reported and its spending reports fell short.</p>
+    <div class="meta-row">
+      <span class="meta-pill">Issued by: Office of the Legislative Auditor General</span>
+      <span class="meta-pill">Audited: World Trade Center Utah and GOED</span>
+      <span class="meta-pill">Chief officers: Jonathan Freedman (WTC Utah) · Commissioner Jefferson Moss (GOED)</span>
+    </div>
+    <p class="pub-date">Posted Oct. 17, 2026 &middot; Updated Oct. 17, 2026</p>
+  </div>
+</header>
+<main>
+<div class="hs-plain">New to this? <a class="hs-btn" href="weber-hive-wtc-utah-audit-2026-19-plain.html">Read it in plain words</a> About 500 words, with two pictures.</div>
+<section class="hs-short"><h2>The short version</h2><ul>
+<li>Legislative auditors reviewed <b>World Trade Center Utah</b>, a private nonprofit that helps Utah companies sell overseas and draws foreign investment. The state paid it about <b>$2.2 million</b> in fiscal 2025 and nearly <b>$7.2 million</b> from 2021 through 2025.</li>
+<li>The audit found WTC Utah <b>appears to have done the work</b> its two state contracts asked for, and that its trade mission fees for government officials were <b>in line with its contract</b>.</li>
+<li>Its main result number, "new trade opportunities," counts <b>prospective</b> sales along with real ones, is reported by the businesses themselves, and is not consistently checked. The audit says it "may overstate actual economic impacts."</li>
+<li>WTC Utah fell short on <b>three reports</b>, including its yearly filing with the State Auditor. The audit says it had not filed one since 2024. It says it fixed that in July 2026.</li>
+<li>The GOED contract <b>never required WTC Utah to report what it spent</b>. That contract ends Dec. 31, 2026, and a new one is being negotiated.</li>
+</ul></section>
+<nav class="hs-toc" aria-label="On this page"><a href="#found">What the audit found</a><a href="#money">Where the state money goes</a><a href="#nto">The "new trade opportunities" number</a><a href="#reports">Three reports that fell short</a><a href="#fees">Trade mission fees</a><a href="#recs">The five recommendations</a><a href="#responses">What WTC Utah and GOED said</a><a href="#timeline">Timeline</a><a href="#notes">Notes on the report itself</a><a href="#rubric">Graded by the collective rubric</a><a href="#common">Common questions</a><a href="#people">People named in the record</a><a href="#ask">Questions to ask, and whom to ask</a><a href="#updates">Updates since this was posted</a><a href="#related">Connected Hive work</a><a href="#words">Words to know</a><a href="#behind">Behind this piece</a><a href="#sources">Sources</a></nav>
+<nav class="hs-pages" aria-label="Audits pages"><div class="hs-k">Audits pages</div><ol><li><a href="index.html">Audits docket</a><small>Every audit we track, searchable</small></li><li><a href="weber-hive-goed-audit-2026-18-plain.html">GOED audit, in plain words</a><small>The short, simple version</small></li><li><a href="weber-hive-goed-audit-2026-18.html">GOED audit: full case file</a><small>$249 million and no way to show where it went</small></li><li><a href="weber-hive-wtc-utah-audit-2026-19-plain.html">World Trade Center Utah, in plain words</a><small>The short, simple version</small></li><li class=cur><a href="weber-hive-wtc-utah-audit-2026-19.html">World Trade Center Utah: full case file</a><small>Work done, but the paperwork fell short</small></li><li><a href="weber-hive-mep-impact-utah-usu25sp-plain.html">iMpact Utah grant money, in plain words</a><small>The short, simple version</small></li><li><a href="weber-hive-mep-impact-utah-usu25sp.html">iMpact Utah grant money: full case file</a><small>Up to $2.8 million used for the wrong things</small></li><li><a href="weber-hive-audit-committee-policy.html">Weber County audit committee rules</a><small>A draft rewrite, May 2026</small></li></ol></nav>
+
+<section class="stamp-block">
+  <div class="stamp">C</div>
+  <div class="stamp-text">
+    <span class="stamp-label">HOW THIS PIECE GRADES THE STATE'S OVERSIGHT OF THIS MONEY</span>
+    <p>The contracted work appears to have been delivered and no misuse was found. But for years the state paid without asking how the money was spent, and the one result number rests on what businesses chose to report.</p>
+  </div>
+</section>
+<section><h2 class="section-head" id="found">What the audit found</h2>
+<p class="lede">World Trade Center Utah (WTC Utah) is a nonprofit, founded in 2006, that helps Utah businesses sell into other countries, brings in foreign investment, and hosts foreign delegations. It works closely with the Governor's Office of Economic Development (GOED), which oversees both of its state contracts.</p>
+<p>Two legislative leaders' questions drove the audit: Are the state funds given to WTC Utah being spent efficiently and effectively? And are the fees WTC Utah charges to go on trade missions appropriate?</p>
+<p>The auditors looked mainly at fiscal 2025, the latest complete year. Their answer to the first question was mixed. WTC Utah "appears to have carried out the activities required under these contracts and achieved the intended contract deliverables." But the auditors found four areas to improve, and wrote: "WTC Utah did not have processes in place that ensured reporting compliance, and limited oversight by prior GOED leadership allowed deficiencies to continue."</p>
+<p>On the second question, the auditors "did not find that WTC Utah is charging fees in violation of its current contract."</p>
+<div class="figure-grid">
+  <div class="figure-cell"><span class="num">$2.2M</span><span class="cap">state money through two contracts, fiscal 2025</span></div>
+  <div class="figure-cell"><span class="num">$7.2M</span><span class="cap">state money in total, 2021 through 2025</span></div>
+  <div class="figure-cell"><span class="num">5</span><span class="cap">recommendations, all accepted</span></div>
+</div>
+</section>
+<section><h2 class="section-head" id="money">Where the state money goes</h2>
+<p>The state pays WTC Utah through two separate deals. The audit notes that state funding grew in 2023, when the GOED contract added work, and again in 2024, to open and run a trade office in South Korea.</p>
+<div class="hs-fig"><h3>How the money reaches WTC Utah</h3><p class="sub">From the audit's description of the two contracts.</p><div class="flow">
+<div class="fb dark"><b>Utah Legislature</b><small>Sets the budget</small></div>
+<div class="ar">two separate deals</div>
+<div class="flow2">
+ <div class="flow"><div class="fb"><b>Pass-through grant</b><small>$1.66 million in fiscal 2025<br>The Legislature names WTC Utah; GOED pays it out</small></div></div>
+ <div class="flow"><div class="fb"><b>GOED sole-source contract</b><small>$525,000 a year<br>$2.35 million over 2022–2026, no bidding</small></div></div>
+</div>
+<div class="ar">about $2.2 million in fiscal 2025</div>
+<div class="fb red"><b>World Trade Center Utah</b><small>Private nonprofit, founded 2006<br>The state is about one-third of its money</small></div>
+<div class="ar">WTC Utah reports back to GOED</div>
+<div class="fb"><b>What GOED gets</b><small>Counts of activities (consultations, visits, grants) plus one result number: "new trade opportunities," reported by the businesses themselves</small></div>
+</div></div>
+<p>Neither contract says how the money should be split among the jobs. The splits below are WTC Utah's own, as the audit reports them.</p>
+<div class="hs-fig"><h3>Pass-through contract: how WTC Utah split $1.66 million</h3><p class="sub">Fiscal 2025. Reported results: 394 consultations, 47 sales growth projects, 87 trade facilitations, 194 and 377 investment facilitations.</p><div class="hs-bars"><div class="lab">Foreign direct investment</div><div class="tr" title="Foreign direct investment: $1,162,500"><div class="fl" style="width:66.0%"></div><span class="v">$1,162,500</span></div><div class="lab">South Korea trade team</div><div class="tr" title="South Korea trade team: $300,000"><div class="fl" style="width:17.0%"></div><span class="v">$300,000</span></div><div class="lab">Trade promotion</div><div class="tr" title="Trade promotion: $200,000"><div class="fl" style="width:11.4%"></div><span class="v">$200,000</span></div></div></div>
+
+<div class="hs-fig"><h3>GOED contract: how WTC Utah split $525,000</h3><p class="sub">Fiscal 2025. Reported results: 43 inbound country visits, 2 trade missions, 5 trade shows with 39 companies, 81 grants awarded.</p><div class="hs-bars"><div class="lab">Diplomatic hosting</div><div class="tr" title="Diplomatic hosting: $200,000"><div class="fl" style="width:11.4%"></div><span class="v">$200,000</span></div><div class="lab">Grant administration</div><div class="tr" title="Grant administration: $175,000"><div class="fl" style="width:9.9%"></div><span class="v">$175,000</span></div><div class="lab">Trade missions</div><div class="tr" title="Trade missions: $150,000"><div class="fl" style="width:8.5%"></div><span class="v">$150,000</span></div><div class="lab">Foreign direct investment</div><div class="tr" title="Foreign direct investment: $0"><div class="fl zero" style="width:0.0%"></div><span class="v">$0</span></div></div></div>
+
+<p class="note">Foreign direct investment shows $0 under the GOED contract because, per the audit, it appears in both contracts and WTC Utah pays for it only from the pass-through money.</p>
+<div class="hs-fig"><h3>Where all of WTC Utah’s money came from, 2021–2025</h3><p class="sub">Average share of revenue. The audit’s rounded figures add to 101%.</p><div class="hs-bars"><div class="lab">Private (memberships, sponsors, services)</div><div class="tr" title="Private (memberships, sponsors, services): 45%"><div class="fl" style="width:66.0%"></div><span class="v">45%</span></div><div class="lab">State contracts</div><div class="tr" title="State contracts: 35%"><div class="fl" style="width:51.3%"></div><span class="v">35%</span></div><div class="lab">Federal grants</div><div class="tr" title="Federal grants: 21%"><div class="fl" style="width:30.8%"></div><span class="v">21%</span></div></div></div>
+
+<div class="hs-fig"><h3>What WTC Utah spent it on, 2021–2025</h3><p class="sub">Average share of expenses. The audit’s rounded figures add to 101%.</p><div class="hs-bars"><div class="lab">Staff wages and benefits</div><div class="tr" title="Staff wages and benefits: 52%"><div class="fl" style="width:66.0%"></div><span class="v">52%</span></div><div class="lab">Grants paid out</div><div class="tr" title="Grants paid out: 19%"><div class="fl" style="width:24.1%"></div><span class="v">19%</span></div><div class="lab">Administration</div><div class="tr" title="Administration: 16%"><div class="fl" style="width:20.3%"></div><span class="v">16%</span></div><div class="lab">Programs, events, investment work</div><div class="tr" title="Programs, events, investment work: 14%"><div class="fl" style="width:17.8%"></div><span class="v">14%</span></div></div></div>
+
+</section>
+<section><h2 class="section-head" id="nto">The "new trade opportunities" number</h2>
+<p>Most of what WTC Utah reports to the state are counts of activity, such as meetings held or grants given. The audit calls these <b>outputs</b>. It reports only one <b>outcome</b>, a number meant to show results: "new trade opportunities," or NTO.</p>
+<p>NTO adds together three things: actual sales, <b>prospective</b> sales and actual investment, as reported by businesses in impact statements and surveys after they work with WTC Utah. The audit found three problems with that:</p>
+<ul>
+<li>It includes deals that have not happened yet and may never happen.</li>
+<li>It relies on what businesses say, and "strong supporting documentation is not consistently obtained."</li>
+<li>As a result, "NTO figures may overstate actual economic impacts."</li>
+</ul>
+<p>The audit recommends WTC Utah follow up with businesses for proof of completed deals, and that GOED review whether its contract measures show whether the program is working.</p>
+<details><summary>What WTC Utah says about NTO</summary>
+<p>In its response, WTC Utah says reporting is voluntary in nearly all cases, that companies often can't share confidential financial records, and that pushing for them could discourage the reporting the number depends on. It also says NTO is "a success of a company, not an economic development organization," and that it tracks the number as a sign of program performance, not as its own standalone success.</p>
+<p>It agreed to report NTO in three tiers: <b>prospective</b>, <b>actual</b> and <b>publicly announced</b> (backed by a press release, public filing or other public record). It also agreed to check in every year with every company that reported NTO. Its timetable: tier definitions by Oct. 31, 2026; the first full follow-up and 2026 numbers by tier by Dec. 31, 2026. The plan notes it is "subject to further discussion with GOED."</p>
+</details>
+</section>
+<section><h2 class="section-head" id="reports">Three reports that fell short</h2>
+<p>The audit found three places where WTC Utah's reporting did not meet the requirements:</p>
+<div class="change-grid">
+<div class="change-row"><div class="change-label">PASS-THROUGH REPORT</div><div class="change-body"><p>The contract requires WTC Utah to say "how Grantee used funds or will use funds." The 2025 annual report it gave GOED did not include those details.</p></div></div>
+<div class="change-row"><div class="change-label">GRANT REPORTING</div><div class="change-body"><p>The GOED contract asks for grant details. The quarterly reports listed the number of grant recipients, but not the grant money available, the number of companies awarded, or the NTO from the grants. WTC Utah says it reported some of this and folds grant results into its overall NTO on purpose, so the same deal isn't counted twice.</p></div></div>
+<div class="change-row"><div class="change-label">STATE AUDITOR FILING</div><div class="change-body"><p>Utah law requires nonprofits that get $25,000 or more in public money to file an accounting report with the State Auditor each year. The audit says WTC Utah met that threshold every year but had not filed since 2024. WTC Utah says it uploaded its past financial audits on July 28, 2026, and started a compliance calendar on July 30, 2026.</p></div></div>
+</div>
+<p style="margin-top:16px">The audit names two causes: WTC Utah had no process to make sure the reports were done, and "prior GOED leadership provided limited oversight of pass-through funds and approved final payments to WTC Utah despite incomplete reporting."</p>
+<p>WTC Utah says the gap happened during a change-over in its finance department, "did not involve the misuse of public funds," and that an independent accounting firm audits its books every year. GOED holds a seat on its board.</p>
+</section>
+<section><h2 class="section-head" id="fees">Trade mission fees</h2>
+<p>Some people the auditors spoke with questioned why WTC Utah charges people to join trade missions when the state already pays it to run them. One asked whether that meant WTC Utah was paid twice.</p>
+<p>The GOED contract, as amended in 2023, says WTC Utah books and pays flights, hotels and fees for the Governor and up to two members of the Governor's team. Everyone else on the delegation, including state employees and elected officials, pays their own way, and WTC Utah "may also charge trade mission delegation members a participation fee." WTC Utah sets aside $200,000 of its $525,000 GOED payment for two trade missions a year.</p>
+<p>The audit found no fee charged against the contract. But it says the new contract should make clear that state money and fees don't pay for the same thing twice. It also notes that in the 2026 General Session, the Legislature gave GOED <b>$250,000 in one-time money</b> for travel and lodging of executive and legislative officials on trade missions.</p>
+<p>WTC Utah's response: "no activity, service, or cost is funded twice." It says its two state deals pay for different work.</p>
+<p class="note">The audit says the fee question is discussed further in the GOED audit, Report 2026-18. <a href="weber-hive-goed-audit-2026-18.html">Read our case file on that audit.</a></p>
+</section>
+<section><h2 class="section-head" id="recs">The five recommendations</h2>
+<div class="hs-qa"><div><b>1.1 · GOED</b>Review the contract's performance measures for WTC Utah and use them to guide future funding.</div><div><b>1.2 · WTC Utah</b>Follow up with businesses for documents confirming completed sales, investments and other results.</div><div><b>1.3 · WTC Utah</b>Strengthen its process for meeting contract and State Auditor reporting rules, with regular management review.</div><div><b>1.4 · GOED</b>Spell out in the new contract how the money is to be spent.</div><div><b>1.5 · GOED</b>Require regular expense reports tied to each key contract deliverable.</div></div><p style="margin-top:14px">All five were accepted.</p>
+</section>
+<section><h2 class="section-head" id="responses">What WTC Utah and GOED said</h2>
+<dl class="qa">
+<dt>WTC Utah (letter from President and CEO Jonathan Freedman, Aug. 14, 2026)</dt>
+<dd>Accepted both recommendations aimed at it and said it plans to finish them by Dec. 31, 2026, "pending further conversations with GOED." It highlighted its public-private model and its weekly tariff briefings: 57 online sessions through June 30, 2026, with 440 different people attending. It cautioned that "highly prescriptive line-item budgeting and reporting" could slow its ability to shift resources when business needs change. Named contacts: Ben Kolendar, chief of staff (recommendation 1.2), and Heather Garcia, chief financial officer (1.3).</dd>
+<dt>GOED (letter from Commissioner Jeff Moss, Aug. 21, 2026)</dt>
+<dd>Accepted all three recommendations aimed at it. Deputy Commissioner Tara Rosander is named on each. GOED says it has already reviewed the measures and written new ones, that the proposed new contract says how money is to be spent (Attachment D), and that it requires quarterly reports on key deliverables (Attachment B). On all three, it says a draft contract has been provided and GOED is "attempting to execute a new contract."</dd>
+</dl>
+</section>
+<section><h2 class="section-head" id="timeline">Timeline</h2>
+<ul class="tl"><li><b>2006</b>World Trade Center Utah founded as a nonprofit.</li><li><b>2022</b>GOED sole-source contract begins (2022–2026, $2.35 million in total).</li><li><b>2023</b>Contract amended: more work, and the trade mission fee terms quoted in the audit.</li><li><b>2024</b>Pass-through money expands to open a trade office in South Korea. Per the audit, the last year WTC Utah filed its accounting report with the State Auditor before this audit.</li><li><b>Feb. 2025</b>WTC Utah begins its online tariff briefings (per its response letter).</li><li><b>2026 General Session</b>Legislature gives GOED $250,000 one-time for officials' trade mission travel.</li><li><b>July 28–30, 2026</b>WTC Utah says it uploaded its past audits to the State Auditor and started a compliance calendar.</li><li><b>Aug. 14 and 21, 2026</b>WTC Utah and GOED send their responses.</li><li><b>Sept. 15, 2026</b>Audit sent to the Legislature (Report 2026-19), the same day as the GOED audit, Report 2026-18.</li><li><b>Oct. 31, 2026</b>WTC Utah's target date for its three-tier NTO definitions.</li><li><b>Dec. 31, 2026</b>Current GOED contract ends. WTC Utah's target for its first full NTO follow-up.</li></ul>
+</section>
+<section><h2 class="section-head" id="notes">Notes on the report itself</h2>
+<p>Two things in the published PDF appear to be leftovers from other reports. Neither changes the findings, but readers comparing pages may notice them:</p>
+<ul>
+<li>The one-page audit summary includes a box reading "DTS should ensure it strives to reach the performance metrics for critical incidents..." DTS (Utah's Division of Technology Services) is not part of this audit.</li>
+<li>The "Complete List of Audit Recommendations" says "This report made the following two recommendations," then lists five.</li>
+</ul>
+</section>
+<section><h2 class="section-head" id="rubric">Graded by the collective rubric</h2>
+<table class="rubric"><caption>Power · Transparency · Financial Accountability · Environmental Impact · Community Impact</caption><tr><th>Power</th><td class="grade">C</td><td>Both state deals went to WTC Utah without competition: one named by the Legislature, one a GOED sole-source contract. GOED holds a seat on WTC Utah's board. Neither contract said how the money should be split.</td></tr><tr><th>Transparency</th><td class="grade">C</td><td>Spending details missing from the 2025 pass-through report, grant measures missing from quarterly reports, and no State Auditor filing since 2024. WTC Utah says the filings were brought current in July 2026.</td></tr><tr><th>Financial accountability</th><td class="grade">C</td><td>No misuse of public money was found, and an independent firm audits WTC Utah each year. But the GOED contract never required expense reporting, and GOED approved final payments despite incomplete reports.</td></tr><tr><th>Environmental impact</th><td class="grade">N/A</td><td>Not addressed by this audit.</td></tr><tr><th>Community impact</th><td class="grade">B</td><td>The contracted work appears to have been delivered, and private money covered about 45% of WTC Utah's budget. The one result number can't yet show how much real business followed.</td></tr><tr class="overall"><th>Overall</th><td class="grade">C</td><td>Real work delivered under weak state oversight, with fixes promised or underway. Graded on what the audit documented, not on whether the fixes hold.</td></tr></table>
+</section>
+<section><h2 class="section-head" id="common">Common questions</h2>
+<dl class="qa">
+<dt>Did the audit find money was misused?</dt>
+<dd>No. It found the contracted work appears to have been done and the fees were within the contract. The problems were measurement and reporting.</dd>
+<dt>Is this the same as the One World Trade Center in New York?</dt>
+<dd>No. WTC Utah is a Utah nonprofit and part of a worldwide network of trade centers. It is not the New York building.</dd>
+<dt>Why audit a nonprofit?</dt>
+<dd>Because it receives public money. The audit was requested to check whether state funds were spent well and whether its trade mission fees were appropriate.</dd>
+<dt>Does the state still fund WTC Utah?</dt>
+<dd>Yes. The audit says the Legislature has typically given the pass-through money every year. GOED's contract runs through Dec. 31, 2026, and a new one was in draft when the audit came out.</dd>
+<dt>Is this connected to the GOED audit?</dt>
+<dd>Yes. Both reports came out Sept. 15, 2026, and both involve GOED's oversight of money it passes on to outside groups. This report points readers to the GOED audit for more on trade mission fees.</dd>
+</dl>
+</section>
+<section><h2 class="section-head" id="people">People named in the record</h2>
+<div class="hs-qa"><div><b>Jonathan Freedman</b>President and CEO of WTC Utah; the audit's designated chief officer for WTC Utah. Signed WTC Utah's response.</div><div><b>Jefferson (Jeff) Moss</b>Commissioner of GOED; designated chief officer for GOED. Signed GOED's response. The audit credits current GOED leadership with fixes and faults "prior GOED leadership." <a href="https://weber-county-hive.github.io/Unelected-Power/jefferson-moss.html" target="_blank" rel="noopener">Hive profile</a>.</div><div><b>Tara Rosander</b>GOED deputy commissioner, named on all three of GOED's action plans.</div><div><b>Ben Kolendar and Heather Garcia</b>WTC Utah chief of staff and chief financial officer, named on WTC Utah's two action plans.</div><div><b>Kade R. Minchey</b>Legislative Auditor General, who sent the report to the Legislature.</div><div><b>Audit Subcommittee</b>Senate President J. Stuart Adams and House Speaker Mike Schultz (co-chairs), Sen. Kirk Cullimore, Sen. Luz Escamilla, Rep. Casey Snider and Rep. Angela Romero.</div></div>
+</section>
+<section><h2 class="section-head" id="ask">Questions to ask, and whom to ask</h2>
+<div class="hs-qa"><div><b>GOED</b>Has the new WTC Utah contract been signed? Will Attachment B (quarterly reporting) and Attachment D (how the money is to be spent) be posted publicly?</div><div><b>WTC Utah</b>Were the three-tier NTO definitions adopted by Oct. 31, 2026? For 2025, how much of the NTO total was prospective, and how much was actual?</div><div><b>Your state legislators</b>Will the pass-through grant continue in fiscal 2027, and at what amount? Should pass-through grantees have to report spending the way contractors do?</div><div><b>The State Auditor's office</b>Are WTC Utah's required financial reports now on file? (Anyone can search the State Auditor's reporting site.)</div></div>
+</section>
+<section><h2 class="section-head" id="updates">Updates since this was posted</h2>
+<ul class="tl"><li><b>Oct. 17, 2026</b>This page posted. An online search found no news coverage of this audit yet. GOED's response said a new contract was in draft; we found no public notice that it has been signed.</li></ul><p class="hs-updates">New updates will be added here with their dates. Earlier entries are not changed.</p>
+</section>
+<section><h2 class="section-head" id="related">Connected Hive work</h2>
+<div class="hs-cards"><a href="weber-hive-goed-audit-2026-18.html"><b>The GOED audit (2026-18)</b><span>Released the same day: $249 million GOED couldn't document</span></a><a href="weber-hive-mep-impact-utah-usu25sp.html"><b>iMpact Utah grant money (USU25SP)</b><span>Another group paid through GOED, where money was misused</span></a><a href="https://weber-county-hive.github.io/Unelected-Power/jefferson-moss.html"><b>Jefferson Moss</b><span>Unelected-Power: GOED's commissioner, who signed GOED's response</span></a><a href="https://weber-county-hive.github.io/Unelected-Power/utah-rising.html"><b>Utah Rising</b><span>Unelected-Power: World Trade Center Utah holds a committee seat</span></a><a href="https://weber-county-hive.github.io/Unelected-Power/ryan-starks.html"><b>Ryan Starks</b><span>Unelected-Power: led the office before May 2025</span></a><a href="https://weber-county-hive.github.io/Unelected-Power/dan-hemmert.html"><b>Dan Hemmert</b><span>Unelected-Power: a "Utah World Trade Center Corporation" board seat on his record</span></a><a href="https://weber-county-hive.github.io/UIPA/weber-hive-uipa-explainer.html"><b>Utah Inland Port Authority</b><span>UIPA: World Trade Center Utah CEOs have held its board seat</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb545.html"><b>H.B. 545 (2026)</b><span>Bill-Tracker: the Legislature's response to the GOED audit</span></a></div>
+</section>
+<section><h2 class="section-head" id="words">Words to know</h2>
+<p>Tap a card to see what it means.</p><div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">New trade opportunities (NTO)</div><div class="fh">Tap to see</div><div class="fd">WTC Utah's result number: actual sales plus prospective sales plus actual investment, as reported by businesses.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Pass-through grant</div><div class="fh">Tap to see</div><div class="fd">Money the Legislature sends to a named group through a state agency, without competition. Also called a direct-award grant.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Sole-source contract</div><div class="fh">Tap to see</div><div class="fd">A contract given to one provider without competitive bidding.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Outputs vs. outcomes</div><div class="fh">Tap to see</div><div class="fd">Outputs count what a program does (meetings, grants). Outcomes measure what changed (sales, investment).</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Trade mission</div><div class="fh">Tap to see</div><div class="fd">A trip abroad, often led by the Governor, to meet foreign buyers, investors and officials.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Foreign direct investment</div><div class="fh">Tap to see</div><div class="fd">Money a company from another country invests in a business or facility here.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Participation fee</div><div class="fh">Tap to see</div><div class="fd">What a trade mission member pays to join, on top of their own travel.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">State Auditor accounting report</div><div class="fh">Tap to see</div><div class="fd">A yearly financial filing required of nonprofits that receive $25,000 or more in public money.</div></button></div>
+</section>
+<section><h2 class="section-head" id="behind">Behind this piece</h2><div class="hs-counter"><div><div class="n">42</div><div class="l">Report pages read</div></div><div><div class="n">5</div><div class="l">Recommendations tracked</div></div><div><div class="n">2</div><div class="l">Response letters read</div></div><div><div class="n">11</div><div class="l">Dated timeline entries</div></div></div><p class="hs-updates">Posted Oct. 17, 2026. Built from the full audit PDF (42 pages), read as extracted text and checked figure by figure. Charts that come from the audit's own figures use only the numbers printed in its text.</p></section>
+<section id="sources"><details class="sources-block"><summary>Sources</summary><ol><li>Office of the Legislative Auditor General, Report No. 2026-19, "A Performance Audit of World Trade Center Utah: A Review of State Contract Fulfillment," transmitted Sept. 15, 2026. <a href="https://pf.utleg.gov/olag/reports/audits/2026/8e0e53eb-e123-4342-a448-e6176a65a66c/2026-19_RPT.pdf" target="_blank" rel="noopener">Full report (PDF)</a></li><li>World Trade Center Utah response letter, Jonathan Freedman, Aug. 14, 2026, and Audit Response Plan. Appended to Report 2026-19.</li><li>Governor's Office of Economic Development response, Commissioner Jeff Moss, Aug. 21, 2026. Appended to Report 2026-19.</li><li>Office of the Legislative Auditor General, Report No. 2026-18 (GOED). <a href="weber-hive-goed-audit-2026-18.html" target="_blank" rel="noopener">Hive case file</a></li></ol><p style="font-family:Arial,sans-serif;font-size:.8rem;margin:8px 0 4px">Added Oct. 17, 2026, for the updates section:</p><ol><li>Online news search for coverage of Report 2026-19, Oct. 17, 2026: none found.</li></ol></details></section>
+</main>
+<footer>
+  THE WEBER COUNTY HIVE · INDEPENDENT · ACCOUNTABILITY · JOURNALISM<br>
+  <a href="https://webercountyhive.substack.com">webercountyhive.substack.com</a>
+</footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+</body>
+</html>

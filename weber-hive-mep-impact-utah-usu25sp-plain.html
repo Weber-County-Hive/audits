@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iMpact Utah and the MEP Money, in Plain Words | Utah Hive Politics</title>
+<style>
+  :root{
+    --navy:#16233d;
+    --navy-deep:#0e182c;
+    --manila:#e9dfc4;
+    --manila-dark:#d9caa2;
+    --paper:#faf5e8;
+    --ink:#221f1a;
+    --ink-soft:#4a4438;
+    --stamp:#8c2f22;
+    --stamp-soft:#b4543f;
+    --good:#3c5e3f;
+    --good-bg:#e7efe1;
+    --gold:#a9832f;
+    --rule:#c9b98d;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--manila);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,"Iowan Old Style",serif;
+    line-height:1.55;
+  }
+  a{color:var(--stamp);}
+
+  .topband{
+    background:var(--navy-deep);
+    color:var(--manila);
+    padding:10px 24px;
+    font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    font-size:0.72rem;
+    letter-spacing:.06em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .topband a{color:var(--manila-dark);text-decoration:none;border-bottom:1px solid rgba(233,223,196,.35);}
+  .topband a:hover{border-bottom-color:var(--manila);}
+
+  header.case-header{
+    background:var(--navy);
+    color:var(--paper);
+    padding:56px 24px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.case-header::after{
+    content:"";
+    position:absolute;
+    right:-60px;top:-60px;
+    width:260px;height:260px;
+    border:1px solid rgba(233,223,196,.12);
+    border-radius:50%;
+  }
+  .case-wrap{max-width:880px;margin:0 auto;position:relative;}
+  .case-eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  .case-title{
+    font-size:2.5rem;
+    line-height:1.14;
+    margin:0 0 10px;
+    font-weight:600;
+    max-width:20ch;
+  }
+  .case-sub{
+    font-size:1.15rem;
+    color:var(--manila-dark);
+    font-style:italic;
+    margin:0 0 28px;
+    max-width:56ch;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+  }
+  .meta-pill{
+    border:1px solid rgba(233,223,196,.3);
+    padding:6px 12px;
+    border-radius:2px;
+    color:var(--manila-dark);
+  }
+
+  .pub-date{
+    margin-top:14px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.03em;
+    color:var(--gold);
+  }
+
+  main{max-width:880px;margin:0 auto;padding:48px 24px 100px;}
+  section{margin-bottom:56px;}
+  h2.section-head{
+    font-size:1.5rem;
+    margin:0 0 18px;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:10px;
+  }
+  p{margin:0 0 16px;max-width:68ch;}
+  .lede{font-size:1.15rem;color:var(--ink-soft);}
+
+  .stamp-block{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:22px 26px;
+    margin:0 0 36px;
+  }
+  .stamp{
+    flex:0 0 auto;
+    width:88px;height:88px;
+    border:4px solid var(--stamp);
+    border-radius:50%;
+    color:var(--stamp);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:700;
+    font-size:2.4rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(-8deg);
+  }
+  .stamp-text .stamp-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.72rem;
+    letter-spacing:.08em;
+    color:var(--ink-soft);
+    margin-bottom:4px;
+    display:block;
+  }
+  .stamp-text p{margin:0;font-size:.98rem;max-width:52ch;}
+
+  .figure-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+    margin-bottom:8px;
+  }
+  .figure-cell{
+    background:var(--navy);
+    color:var(--paper);
+    padding:22px 18px;
+    text-align:center;
+  }
+  .figure-cell .num{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:1.7rem;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+    margin-bottom:6px;
+  }
+  .figure-cell .cap{
+    font-size:.82rem;
+    color:var(--manila-dark);
+  }
+  @media (max-width:640px){.figure-grid{grid-template-columns:1fr;}}
+
+  .change-grid{
+    display:grid;
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .change-row{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    background:var(--paper);
+  }
+  .change-row .change-label{
+    padding:18px 20px;
+    background:var(--navy);
+    color:var(--manila);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.03em;
+    display:flex;
+    align-items:center;
+  }
+  .change-row .change-body{padding:18px 22px;}
+  .change-row .change-body p{margin:0 0 8px;font-size:.96rem;}
+  .change-row .change-body p:last-child{margin-bottom:0;}
+  @media (max-width:640px){
+    .change-row{grid-template-columns:1fr;}
+    .change-row .change-label{padding:10px 16px;}
+  }
+
+  table.rubric{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--paper);
+    font-size:.95rem;
+  }
+  table.rubric caption{
+    text-align:left;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.74rem;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+    caption-side:top;
+  }
+  table.rubric th,table.rubric td{
+    border:1px solid var(--rule);
+    padding:12px 14px;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.rubric th{
+    background:var(--navy);
+    color:var(--manila);
+    font-weight:600;
+    width:15%;
+  }
+  table.rubric td.grade{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-weight:700;
+    text-align:center;
+    width:8%;
+    font-size:1.1rem;
+  }
+  tr.overall th, tr.overall td{
+    background:#efe6cf;
+    font-weight:700;
+  }
+
+  .pattern{
+    background:var(--navy);
+    color:var(--paper);
+    padding:24px 26px;
+  }
+  .pattern .pattern-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.74rem;
+    letter-spacing:.06em;
+    color:var(--gold);
+    display:block;
+    margin-bottom:10px;
+  }
+  .pattern p{color:var(--manila-dark);margin-bottom:0;}
+  .pattern strong{color:var(--paper);}
+
+  details{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:16px 20px;
+    margin-top:8px;
+  }
+  details summary{
+    cursor:pointer;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.8rem;
+    letter-spacing:.04em;
+    color:var(--stamp);
+  }
+  details[open] summary{margin-bottom:12px;}
+  details p:last-child{margin-bottom:0;}
+
+  .qa dt{font-weight:600;margin-top:18px;}
+
+  .ask-list{list-style:none;margin:0;padding:0;}
+  .ask-list li{
+    background:var(--paper);
+    border-left:4px solid var(--gold);
+    padding:14px 18px;
+    margin-bottom:10px;
+    font-size:.95rem;
+  }
+  .ask-list li strong{color:var(--stamp);}
+  .qa dt:first-child{margin-top:0;}
+  .qa dd{margin:6px 0 0;color:var(--ink-soft);}
+
+  .sources-block{
+    background:transparent;
+    border:none;
+    border-top:2px solid var(--ink);
+    padding:0;
+    margin-top:8px;
+  }
+  .sources-block summary{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.85rem;
+    letter-spacing:.04em;
+    color:var(--ink);
+    padding:14px 0;
+  }
+  .sources-block ol{
+    margin:0 0 16px;
+    padding-left:20px;
+    font-size:.92rem;
+    color:var(--ink-soft);
+  }
+  .sources-block li{margin-bottom:10px;}
+
+  .related-row{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .related-card{
+    flex:1;
+    min-width:220px;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .related-card:hover{border-color:var(--stamp);}
+  .related-card .rc-label{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.7rem;
+    letter-spacing:.05em;
+    color:var(--stamp);
+    display:block;
+    margin-bottom:6px;
+  }
+  .related-card .rc-title{font-weight:600;font-size:.98rem;}
+
+  footer{
+    background:var(--navy-deep);
+    color:var(--manila-dark);
+    padding:32px 24px;
+    text-align:center;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.76rem;
+    letter-spacing:.04em;
+  }
+  footer a{color:var(--gold);}
+
+  .flow{display:flex;flex-direction:column;align-items:stretch;gap:0;max-width:640px;margin:0 auto}
+  .flow .fb{background:#fff;border:2px solid var(--navy);padding:14px 18px;font-size:1.08rem;line-height:1.35;text-align:center}
+  .flow .fb b{display:block;font-size:1.15rem}
+  .flow .fb small{display:block;font-family:Arial,sans-serif;font-size:.9rem;color:var(--ink-soft);margin-top:4px}
+  .flow .fb.red{border-color:var(--stamp);background:#fbeee9}
+  .flow .fb.dark{background:var(--navy);color:var(--paper)}
+  .flow .fb.dark small{color:var(--manila-dark)}
+  .flow .ar{text-align:center;font-family:Arial,sans-serif;font-size:.95rem;color:var(--ink-soft);padding:6px 0}
+  .flow .ar::before{content:"\25BC";display:block;color:var(--stamp);font-size:1.3rem;line-height:1}
+  .flow2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.flow2{grid-template-columns:1fr}}
+  .tl{list-style:none;margin:0;padding:0;border-left:4px solid var(--stamp)}
+  .tl li{position:relative;padding:0 0 18px 22px;font-size:1rem}
+  .tl li::before{content:"";position:absolute;left:-11px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:4px solid var(--stamp)}
+  .tl li b{display:block;font-family:Arial,sans-serif;font-size:.9rem;color:var(--stamp)}
+  .note{background:var(--paper);border:1px dashed var(--rule);padding:12px 16px;font-size:.93rem;color:var(--ink-soft);margin:0 0 16px}
+  table.money{width:100%;border-collapse:collapse;background:var(--paper);font-size:.98rem;margin-bottom:10px}
+  table.money th,table.money td{border:1px solid var(--rule);padding:10px 12px;text-align:left;vertical-align:top}
+  table.money th{background:var(--navy);color:var(--manila)}
+  table.money td.n{text-align:right;font-family:Arial,sans-serif;font-weight:bold;white-space:nowrap}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-wrap{max-width:880px;margin:0 auto;padding:0 24px}
+.hs-short{background:#faf5e8;border:1px solid #c9b98d;border-left:6px solid #8c2f22;padding:18px 22px;margin:0 0 30px}
+.hs-short h2{font-size:1.2rem;margin:0 0 10px;border:0;padding:0}
+.hs-short ul{margin:0;padding-left:20px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.82rem;padding:7px 12px;border:1px solid #c9b98d;background:#faf5e8;color:#221f1a;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#8c2f22}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#f3ead2;border:1px dashed #8c2f22;padding:14px 18px;margin:0 0 26px;font-size:1rem}
+.hs-btn{display:inline-block;background:#8c2f22;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:10px 16px;border-radius:6px}
+.hs-pages{background:#faf5e8;border:1px solid #c9b98d;padding:14px 18px;margin:0 0 30px}
+.hs-pages .hs-k{font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#4a4438;margin-bottom:8px}
+.hs-pages ol{margin:0;padding-left:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#221f1a;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#4a4438;font-weight:normal}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#faf5e8;border:1px solid #c9b98d;border-top:5px solid #8c2f22;padding:14px 16px;cursor:pointer;font:inherit;color:#221f1a;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.75rem;color:#4a4438;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#faf5e8;border-left:4px solid #8c2f22;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.85rem;color:#8c2f22;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#16233d;color:#faf5e8;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.8rem;font-weight:bold}
+.hs-counter .l{font-size:.8rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.85rem;color:#4a4438;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#faf5e8;border:1px solid #c9b98d;border-top:5px solid #8c2f22;padding:14px 16px;text-decoration:none;color:#221f1a}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.88rem;color:#4a4438}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,34%) 1fr;gap:10px 12px;align-items:center;font-family:Arial,sans-serif;font-size:.95rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:26px;background:#8c2f22;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.zero{background:none;border-left:3px solid #221f1a;border-radius:0}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#faf5e8;border:1px solid #c9b98d;padding:16px 18px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.05rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.82rem;color:#4a4438;margin:0 0 12px}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.85rem}}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
+<div class="topband">
+  <span>THE WEBER COUNTY HIVE — AUDITS</span>
+  <a href="index.html">← Full audits docket</a>
+</div>
+<header class="case-header"><div class="case-wrap">
+<p class="case-eyebrow">IN PLAIN WORDS · STATE AUDITOR REPORT USU25SP</p>
+<h1 class="case-title">Money for Utah Factories Went Somewhere Else</h1>
+<p class="case-sub">The short, simple version of a State Auditor review of iMpact Utah.</p>
+<p class="pub-date">Posted Oct. 17, 2026 &middot; Updated Oct. 17, 2026</p>
+</div></header>
+<main>
+<div class="hs-plain">Want every detail and source? <a class="hs-btn" href="weber-hive-mep-impact-utah-usu25sp.html">Read the full case file</a></div>
+<nav class="hs-pages" aria-label="Audits pages"><div class="hs-k">Audits pages</div><ol><li><a href="index.html">Audits docket</a><small>Every audit we track, searchable</small></li><li><a href="weber-hive-goed-audit-2026-18-plain.html">GOED audit, in plain words</a><small>The short, simple version</small></li><li><a href="weber-hive-goed-audit-2026-18.html">GOED audit: full case file</a><small>$249 million and no way to show where it went</small></li><li><a href="weber-hive-wtc-utah-audit-2026-19-plain.html">World Trade Center Utah, in plain words</a><small>The short, simple version</small></li><li><a href="weber-hive-wtc-utah-audit-2026-19.html">World Trade Center Utah: full case file</a><small>Work done, but the paperwork fell short</small></li><li class=cur><a href="weber-hive-mep-impact-utah-usu25sp-plain.html">iMpact Utah grant money, in plain words</a><small>The short, simple version</small></li><li><a href="weber-hive-mep-impact-utah-usu25sp.html">iMpact Utah grant money: full case file</a><small>Up to $2.8 million used for the wrong things</small></li><li><a href="weber-hive-audit-committee-policy.html">Weber County audit committee rules</a><small>A draft rewrite, May 2026</small></li></ol></nav>
+
+<section><h2 class="section-head">What it was for</h2>
+<p>The federal government and Utah both pay for a program that helps small factories and manufacturers. Utah put in <b>$2.8 million a year</b>. Most of the money went to a nonprofit called <b>iMpact Utah</b>.</p></section>
+<section><h2 class="section-head">What went wrong</h2>
+<p>After a tip to her hotline, the State Auditor looked at iMpact Utah's records. She found its president used program money for things that did not help the program. In all, she estimates <b>$1.8 million to $2.8 million</b>.</p></section>
+<div class="hs-fig"><h3>Where the money went</h3><p class="sub">Amounts the State Auditor listed.</p><div class="hs-bars"><div class="lab">Used for Vereo Impact (up to)</div><div class="tr" title="Used for Vereo Impact (up to): $2,147,822"><div class="fl" style="width:66.0%"></div><span class="v">$2,147,822</span></div><div class="lab">Pay above similar nonprofits (approx.)</div><div class="tr" title="Pay above similar nonprofits (approx.): $750,000"><div class="fl" style="width:23.0%"></div><span class="v">$750,000</span></div><div class="lab">Personal vacations (at least)</div><div class="tr" title="Personal vacations (at least): $35,715"><div class="fl" style="width:1.1%"></div><span class="v">$35,715</span></div><div class="lab">Political donations</div><div class="tr" title="Political donations: $9,958"><div class="fl" style="width:1.0%"></div><span class="v">$9,958</span></div><div class="lab">Other personal expenses (approx.)</div><div class="tr" title="Other personal expenses (approx.): $2,563"><div class="fl" style="width:1.0%"></div><span class="v">$2,563</span></div></div></div>
+
+<section><h2 class="section-head">How it happened</h2>
+<p>The money passed through two state offices before it reached iMpact Utah. <b>Neither office checked how it was spent.</b> Each seems to have thought someone else was in charge of that.</p>
+<p>iMpact Utah had no working board to keep watch. It also never filed the yearly money reports the law requires, and no one told the State Auditor it should have.</p></section>
+<section><h2 class="section-head">What happened after</h2>
+<p>iMpact Utah said it would close at the end of July 2025. All the state agencies agreed to fix their oversight. The state office said it was working with the Attorney General's office on an investigation. As of Oct. 17, 2026, we found no public report of charges or money paid back.</p>
+<p>The Legislature still funds the program. Its 2026 budget lists $1.5 million a year for it.</p></section>
+<section><h2 class="section-head">Why it matters to you</h2>
+<p>This is tax money. A 2026 state audit of the same office used this case as proof of what happens when nobody checks.</p>
+<p>The Hive graded the oversight an <b>F</b>. The full case file shows how.</p></section>
+<div class="hs-plain">Ready for the details? <a class="hs-btn" href="weber-hive-mep-impact-utah-usu25sp.html">Read the full case file</a> It has the sources, the grade, a timeline and questions to ask.</div>
+</main>
+<footer>
+  THE WEBER COUNTY HIVE · INDEPENDENT · ACCOUNTABILITY · JOURNALISM<br>
+  <a href="https://webercountyhive.substack.com">webercountyhive.substack.com</a>
+</footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+</body>
+</html>
