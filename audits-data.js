@@ -16,10 +16,12 @@
 // lastUpdated:   the date THIS case entry (or its linked page) was last
 //                verified/edited by us — not the audit's own date.
 // tags:          free-form topic tags, shown as chips and searchable.
-// status:        "confirmed" | "draft" | "unconfirmed"  — controls the
+// status:        "confirmed" | "draft" | "pending" | "unconfirmed"  — controls the
 //                badge color. "confirmed" = a completed, released document
 //                we've read directly. "draft" = explicitly marked draft by
 //                its own issuer, status of adoption/finalization unknown.
+//                "pending" = a proposed policy we've read directly, but
+//                whether it was adopted is not confirmed.
 //                "unconfirmed" = sourced only secondhand (e.g. a hearing
 //                account), no primary document in hand yet.
 // grade:         Overall letter grade (A-F) from the collective rubric, if
@@ -43,14 +45,14 @@ const AUDITS = [
   },
   {
     id: "weber-g14-2026",
-    reportNumber: "Draft — G14",
+    reportNumber: "G14 — 2026 Revision",
     agency: "Weber County Commission",
-    title: "A Draft Rewrite of Weber County's Audit Committee Rules",
+    title: "A Rewrite of Weber County's Audit Committee Rules",
     subtitle: "G14, Audit Committee Policy 2026 Revision V2",
     reportedDate: "May 12, 2026",
     lastUpdated: "Oct 17, 2026",
     tags: ["Weber County", "Audit Committee", "Internal Audit", "Public Records"],
-    status: "draft",
+    status: "pending",
     keyFigure: "New subpoena power, new recusal rule, wider confidentiality for draft audit work",
     summary: "A draft presented at the May 12, 2026 Weber County Commission meeting would give the Audit Committee subpoena power when a department limits an audit, require members to step out of reviews of departments they oversaw, and keep draft audit reports, special projects and advisory work out of public view. Listed for approval on the May 19, 2026 commission agenda; outcome not yet posted online.",
     link: "weber-hive-audit-committee-policy.html"

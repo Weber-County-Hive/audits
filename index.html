@@ -399,12 +399,13 @@ html{font-size:112.5%}
   });
 
   function badgeClass(status){
-    if (status === 'draft') return 'badge-draft';
+    if (status === 'draft' || status === 'pending') return 'badge-draft';
     if (status === 'unconfirmed') return 'badge-unconfirmed';
     return 'badge-confirmed';
   }
   function badgeLabel(status){
     if (status === 'draft') return 'DRAFT';
+    if (status === 'pending') return 'ADOPTION NOT CONFIRMED';
     if (status === 'unconfirmed') return 'UNCONFIRMED';
     return 'CONFIRMED';
   }
